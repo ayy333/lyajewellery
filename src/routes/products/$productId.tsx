@@ -92,7 +92,7 @@ function RouteComponent() {
           {/* CTA Buttons */}
           <div className="space-y-3">
             <a
-              href="https://wa.me/212600000000"
+              href="https://wa.me/212663451532"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center justify-center gap-3 w-full py-4 rounded-full text-sm font-semibold tracking-widest uppercase btn-gold"
