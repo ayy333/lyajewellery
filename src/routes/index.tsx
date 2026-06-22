@@ -70,9 +70,8 @@ function ProductsIndex() {
         <div className="max-w-5xl mx-auto px-4 py-10 grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
           {[
             { icon: '✦', label: 'Fait à la Main', sub: '100% artisanal' },
-            { icon: '⬡', label: 'Matériaux Premium', sub: 'Or, Argent, Pierres' },
             { icon: '✿', label: 'Livraison Maroc', sub: 'Partout au Maroc' },
-            { icon: '❋', label: 'Pièces Uniques', sub: 'Édition limitée' },
+            { icon: '❋', label: 'Pièces Uniques', sub: 'Quantité limitée' },
           ].map((item) => (
             <div key={item.label} className="py-4">
               <div
@@ -204,7 +203,7 @@ function ProductsIndex() {
             className="mb-8 leading-relaxed"
             style={{ fontFamily: 'Cormorant Garamond, serif', color: '#C9A96E', fontSize: '1.15rem' }}
           >
-            Chaque pièce est créée à la demande. Contactez-moi sur WhatsApp ou Instagram pour passer votre commande ou demander une création personnalisée.
+            Contactez-moi sur WhatsApp ou Instagram pour passer votre commande ou demander une création personnalisée.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
