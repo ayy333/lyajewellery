@@ -24,7 +24,7 @@ function RootComponent() {
         <div className="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
           <a href="/" className="flex items-center group">
             <img
-              src="/lya-logo.jpg"
+              src="/mini_logo.jpg"
               alt="Lya Jewellery"
               className="h-14 w-auto rounded-full group-hover:scale-105 transition-transform duration-300"
               style={{ filter: 'drop-shadow(0 2px 6px rgba(201,169,110,0.3))' }}
@@ -82,8 +82,7 @@ function RootComponent() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8" id="contact">
             <div>
               <div className="flex items-center gap-3 mb-4">
-                <LyaLogo size={40} />
-                <span
+                <img src="/mini_logo.jpg" alt="Lya Jewellery" className="h-10 w-10 rounded-full object-cover" />
                   className="text-xl font-bold"
                   style={{ fontFamily: 'Playfair Display, serif', color: '#F5EDD6' }}
                 >
