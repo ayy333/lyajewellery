@@ -27,7 +27,7 @@ function ProductsIndex() {
         <div className="relative z-10 max-w-3xl mx-auto">
           <div className="flex justify-center mb-8">
             <img
-              src="/lya-logo.jpg"
+              src="/mini_logo.jpg"
               alt="Lya Jewellery"
               className="h-32 w-32 rounded-full object-cover shadow-2xl"
               style={{ border: '2px solid rgba(201,169,110,0.5)' }}
