@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Lya Jewellery — Colliers Faits à la Main</title>
+  <meta name="description" content="Colliers artisanaux faits à la main, chaque pièce est unique. Livraison partout au Maroc." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Raleway:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --primary: #5C3D2E;
+      --secondary: #A07850;
+      --accent: #C9A96E;
+      --light: #F5EDD6;
+      --cream: #FEFAF3;
+      --dark: #2C1810;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Raleway', sans-serif;
+      background: var(--cream);
+      color: var(--dark);
+      -webkit-font-smoothing: antialiased;
+    }
+    h1,h2,h3,h4 { font-family: 'Playfair Display', serif; }
+
+    /* Header */
+    .site-header {
+      background: linear-gradient(135deg, var(--primary) 0%, #3D2317 50%, var(--primary) 100%);
+      border-bottom: 2px solid var(--accent);
+      position: sticky; top: 0; z-index: 50;
+    }
+    .header-inner {
+      max-width: 1280px; margin: 0 auto;
+      padding: 16px; display: flex; align-items: center; justify-content: space-between;
+    }
+    .logo-img {
+      height: 56px; width: auto; border-radius: 50%;
+      filter: drop-shadow(0 2px 6px rgba(201,169,110,0.3));
+      transition: transform 0.3s;
+    }
+    .logo-img:hover { transform: scale(1.05); }
+    nav a {
+      color: var(--light); font-family: 'Raleway', sans-serif;
+      font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase;
+      text-decoration: none; margin-left: 32px; transition: opacity 0.2s;
+    }
+    nav a:hover { opacity: 0.7; }
+    .nav-desktop { display: flex; }
+    .hamburger {
+      display: none; flex-direction: column; gap: 6px;
+      background: none; border: none; cursor: pointer; padding: 8px;
+    }
+    .hamburger span { display: block; width: 20px; height: 2px; background: var(--accent); }
+    @media (max-width: 768px) { .nav-desktop { display: none; } .hamburger { display: flex; } }
+
+    /* Lace divider */
+    .lace-divider {
+      height: 20px;
+      background-image: url("data:image/svg+xml,%3Csvg width='60' height='20' viewBox='0 0 60 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23C9A96E' fill-opacity='0.3'%3E%3Ccircle cx='10' cy='10' r='3'/%3E%3Ccircle cx='30' cy='10' r='3'/%3E%3Ccircle cx='50' cy='10' r='3'/%3E%3Cpath d='M10 10 Q20 3 30 10 Q40 17 50 10' fill='none' stroke='%23C9A96E' stroke-width='0.8' stroke-opacity='0.4'/%3E%3C/g%3E%3C/svg%3E");
+      background-repeat: repeat-x;
+    }
+
+    /* Moroccan pattern */
+    .moroccan-pattern {
+      background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23C9A96E' stroke-width='0.5' stroke-opacity='0.15'%3E%3Cpath d='M20 0 L40 20 L20 40 L0 20 Z'/%3E%3Cpath d='M20 5 L35 20 L20 35 L5 20 Z'/%3E%3Ccircle cx='20' cy='20' r='5'/%3E%3C/g%3E%3C/svg%3E");
+    }
+
+    /* Hero */
+    .hero {
+      padding: 96px 16px; text-align: center; position: relative; overflow: hidden;
+      background: linear-gradient(135deg, #3D2317 0%, #5C3D2E 50%, #3D2317 100%);
+    }
+    .hero-circle1 {
+      position: absolute; top: 0; left: 0; width: 256px; height: 256px; border-radius: 50%;
+      background: radial-gradient(circle, #C9A96E, transparent); opacity: 0.1;
+      transform: translate(-30%, -30%);
+    }
+    .hero-circle2 {
+      position: absolute; bottom: 0; right: 0; width: 320px; height: 320px; border-radius: 50%;
+      background: radial-gradient(circle, #C9A96E, transparent); opacity: 0.1;
+      transform: translate(30%, 30%);
+    }
+    .hero-inner { position: relative; z-index: 1; max-width: 768px; margin: 0 auto; }
+    .hero-logo {
+      width: 128px; height: 128px; border-radius: 50%; object-fit: cover;
+      border: 2px solid rgba(201,169,110,0.5); box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+      margin: 0 auto 32px; display: block;
+    }
+    .hero-subtitle {
+      font-size: 0.7rem; letter-spacing: 0.4em; text-transform: uppercase;
+      color: var(--accent); font-family: 'Raleway', sans-serif; margin-bottom: 16px;
+    }
+    .hero-title {
+      font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 700; color: var(--light);
+      line-height: 1.2; margin-bottom: 24px;
+    }
+    .hero-title em { color: var(--accent); font-style: italic; font-weight: 400; }
+    .hero-text {
+      font-family: 'Cormorant Garamond', serif; font-size: 1.15rem; color: #E8D9B8;
+      line-height: 1.7; margin-bottom: 40px; max-width: 600px; margin-left: auto; margin-right: auto;
+    }
+    .btn-gold {
+      display: inline-block;
+      background: linear-gradient(135deg, #C9A96E, #A07850, #C9A96E);
+      background-size: 200% auto;
+      color: var(--dark) !important; font-family: 'Raleway', sans-serif;
+      font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase;
+      padding: 16px 40px; border-radius: 50px; text-decoration: none;
+      transition: background-position 0.4s, transform 0.2s; border: none; cursor: pointer;
+    }
+    .btn-gold:hover { background-position: right center; transform: translateY(-1px); }
+
+    /* Trust badges */
+    .trust-section { background: var(--light); }
+    .trust-grid {
+      max-width: 960px; margin: 0 auto; padding: 40px 16px;
+      display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; text-align: center;
+    }
+    @media (min-width: 768px) { .trust-grid { grid-template-columns: repeat(4, 1fr); } }
+    .trust-icon { font-size: 1.5rem; color: var(--accent); margin-bottom: 8px; }
+    .trust-label { font-family: 'Playfair Display', serif; font-size: 0.85rem; font-weight: 600; color: var(--primary); }
+    .trust-sub { font-size: 0.75rem; color: var(--secondary); margin-top: 4px; font-family: 'Raleway', sans-serif; }
+
+    /* Products */
+    .products-section { padding: 80px 16px; background: var(--cream); }
+    .section-header { text-align: center; margin-bottom: 64px; }
+    .section-eyebrow {
+      font-size: 0.7rem; letter-spacing: 0.4em; text-transform: uppercase;
+      color: var(--accent); font-family: 'Raleway', sans-serif; margin-bottom: 12px;
+    }
+    .section-title { font-size: 2.2rem; color: var(--primary); margin-bottom: 16px; }
+    .section-divider { display: flex; align-items: center; justify-content: center; gap: 16px; }
+    .divider-line { height: 1px; width: 64px; background: var(--accent); }
+    .products-grid {
+      max-width: 1280px; margin: 0 auto;
+      display: grid; grid-template-columns: 1fr; gap: 32px;
+    }
+    @media (min-width: 640px) { .products-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (min-width: 1024px) { .products-grid { grid-template-columns: repeat(3, 1fr); } }
+
+    /* Product card */
+    .product-card {
+      background: #FEFAF3; border: 1px solid rgba(201,169,110,0.2);
+      border-radius: 16px; overflow: hidden; cursor: pointer;
+      transition: transform 0.3s, box-shadow 0.3s; text-decoration: none; display: block;
+    }
+    .product-card:hover { transform: translateY(-4px); box-shadow: 0 20px 40px rgba(92,61,46,0.15); }
+    .card-img-wrap { aspect-ratio: 4/3; overflow: hidden; background: linear-gradient(135deg, #fef3c7, #fde68a); position: relative; }
+    .card-img-wrap img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s; }
+    .product-card:hover .card-img-wrap img { transform: scale(1.05); }
+    .card-body { padding: 24px; }
+    .badge-artisan {
+      display: inline-block; color: white; padding: 4px 12px; border-radius: 50%;
+      font-family: 'Raleway', sans-serif; font-size: 0.65rem; letter-spacing: 0.15em;
+      text-transform: uppercase; margin-bottom: 12px;
+      background: linear-gradient(135deg, var(--accent), var(--secondary));
+    }
+    .card-title { font-size: 1.2rem; color: var(--primary); margin-bottom: 8px; }
+    .card-desc { font-size: 0.85rem; color: #6B5040; line-height: 1.6; margin-bottom: 16px; font-family: 'Raleway', sans-serif; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+    .card-footer { display: flex; align-items: center; justify-content: space-between; }
+    .card-price { font-family: 'Playfair Display', serif; font-size: 1.4rem; color: var(--primary); }
+    .card-price span { font-size: 1rem; font-weight: 400; color: var(--secondary); }
+    .card-cta {
+      font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.15em;
+      color: var(--primary); border: 1px solid var(--accent);
+      padding: 8px 16px; border-radius: 50px; font-family: 'Raleway', sans-serif;
+    }
+
+    /* CTA Section */
+    .cta-section {
+      padding: 80px 16px; text-align: center;
+      background: linear-gradient(135deg, #5C3D2E, #3D2317);
+    }
+    .cta-inner { max-width: 640px; margin: 0 auto; }
+    .cta-title { font-size: 2rem; color: var(--light); margin-bottom: 16px; }
+    .cta-text { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; color: var(--accent); line-height: 1.7; margin-bottom: 32px; }
+    .cta-buttons { display: flex; flex-direction: column; gap: 16px; align-items: center; }
+    @media (min-width: 640px) { .cta-buttons { flex-direction: row; justify-content: center; } }
+    .btn-outline {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 16px 32px; border-radius: 50px;
+      font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase;
+      color: var(--light); border: 1px solid var(--accent);
+      font-family: 'Raleway', sans-serif; text-decoration: none; transition: opacity 0.2s;
+    }
+    .btn-outline:hover { opacity: 0.8; }
+
+    /* Footer */
+    footer { background: var(--primary); color: var(--light); }
+    .footer-inner { max-width: 1280px; margin: 0 auto; padding: 48px 16px; }
+    .footer-grid { display: grid; grid-template-columns: 1fr; gap: 32px; margin-bottom: 32px; }
+    @media (min-width: 768px) { .footer-grid { grid-template-columns: repeat(3, 1fr); } }
+    .footer-brand { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
+    .footer-brand-name { font-family: 'Playfair Display', serif; font-size: 1.2rem; color: var(--light); }
+    .footer-bio { font-family: 'Cormorant Garamond', serif; font-size: 1rem; color: var(--accent); line-height: 1.6; }
+    .footer-h { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); margin-bottom: 16px; }
+    .footer-p { font-size: 0.85rem; color: var(--light); opacity: 0.8; line-height: 1.7; font-family: 'Raleway', sans-serif; }
+    .footer-contact { font-size: 0.85rem; color: var(--light); opacity: 0.8; line-height: 2; font-family: 'Raleway', sans-serif; }
+    .footer-bottom { border-top: 1px solid rgba(201,169,110,0.3); padding-top: 24px; text-align: center; font-size: 0.7rem; letter-spacing: 0.15em; color: var(--accent); }
+
+    /* Product detail overlay */
+    .overlay {
+      display: none; position: fixed; inset: 0; z-index: 100;
+      background: rgba(44,24,16,0.7); align-items: center; justify-content: center;
+      padding: 16px; overflow-y: auto;
+    }
+    .overlay.active { display: flex; }
+    .modal {
+      background: var(--cream); border-radius: 16px; max-width: 900px; width: 100%;
+      max-height: 90vh; overflow-y: auto; position: relative;
+    }
+    .modal-close {
+      position: absolute; top: 16px; right: 16px;
+      background: var(--light); border: none; border-radius: 50%;
+      width: 36px; height: 36px; font-size: 1.2rem; cursor: pointer;
+      color: var(--primary); z-index: 1; display: flex; align-items: center; justify-content: center;
+    }
+    .modal-body { display: grid; grid-template-columns: 1fr; }
+    @media (min-width: 768px) { .modal-body { grid-template-columns: 1fr 1fr; } }
+    .modal-img { aspect-ratio: 1; overflow: hidden; border-radius: 16px 16px 0 0; }
+    @media (min-width: 768px) { .modal-img { border-radius: 16px 0 0 16px; } }
+    .modal-img img { width: 100%; height: 100%; object-fit: cover; }
+    .modal-info { padding: 32px; }
+    .modal-eyebrow { font-size: 0.65rem; letter-spacing: 0.35em; text-transform: uppercase; color: var(--accent); font-family: 'Raleway', sans-serif; margin-bottom: 12px; }
+    .modal-title { font-size: 2rem; color: var(--primary); margin-bottom: 16px; }
+    .modal-price { font-family: 'Playfair Display', serif; font-size: 1.8rem; color: var(--primary); margin-bottom: 24px; }
+    .modal-price span { font-size: 1.1rem; font-weight: 400; color: var(--secondary); }
+    .modal-divider { display: flex; align-items: center; gap: 12px; margin-bottom: 24px; }
+    .modal-divider-line { height: 1px; flex: 1; background: rgba(201,169,110,0.3); }
+    .modal-desc { font-family: 'Cormorant Garamond', serif; font-size: 1.05rem; color: var(--primary); line-height: 1.8; margin-bottom: 32px; }
+    .modal-btns { display: flex; flex-direction: column; gap: 12px; margin-bottom: 24px; }
+    .btn-full { display: flex; align-items: center; justify-content: center; gap: 12px; width: 100%; padding: 16px; border-radius: 50px; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; transition: opacity 0.2s; }
+    .btn-full:hover { opacity: 0.85; }
+    .btn-outline-full { color: var(--primary); border: 1.5px solid var(--accent); font-family: 'Raleway', sans-serif; }
+    .modal-guarantees { background: var(--light); border: 1px solid rgba(201,169,110,0.25); border-radius: 12px; padding: 20px; }
+    .guarantees-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .guarantee-item { display: flex; align-items: center; gap: 8px; font-size: 0.75rem; color: #6B5040; font-family: 'Raleway', sans-serif; }
+    .guarantee-icon { color: var(--accent); }
+
+    /* Lya logo SVG small */
+    .lya-icon { display: inline-block; }
+  </style>
+</head>
+<body>
+
+<!-- Header -->
+<header class="site-header">
+  <div class="header-inner">
+    <a href="#top">
+      <img src="lya-logo.jpg" alt="Lya Jewellery" class="logo-img" />
+    </a>
+    <nav class="nav-desktop">
+      <a href="#collection">Collections</a>
+      <a href="#about">À Propos</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <button class="hamburger" onclick="toggleMenu()" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="lace-divider"></div>
+</header>
+
+<!-- Hero -->
+<section class="hero moroccan-pattern" id="top">
+  <div class="hero-circle1"></div>
+  <div class="hero-circle2"></div>
+  <div class="hero-inner">
+    <img src="lya-logo.jpg" alt="Lya Jewellery" class="hero-logo" />
+    <p class="hero-subtitle">Colliers Faits à la Main</p>
+    <h1 class="hero-title">L'Art du Bijou<br><em>Artisanal</em></h1>
+    <p class="hero-text">Chaque collier Lya Jewellery est une pièce unique, façonnée à la main avec soin. Je travaille seule — chaque création est irremplaçable.</p>
+    <a href="#collection" class="btn-gold">Découvrir la Collection</a>
+  </div>
+</section>
+
+<div class="lace-divider"></div>
+
+<!-- Trust badges -->
+<section class="trust-section">
+  <div class="trust-grid">
+    <div><div class="trust-icon">✦</div><div class="trust-label">Fait à la Main</div><div class="trust-sub">100% artisanal</div></div>
+    <div><div class="trust-icon">⬡</div><div class="trust-label">Matériaux Premium</div><div class="trust-sub">Or, Argent, Pierres</div></div>
+    <div><div class="trust-icon">✿</div><div class="trust-label">Livraison Maroc</div><div class="trust-sub">Partout au Maroc</div></div>
+    <div><div class="trust-icon">❋</div><div class="trust-label">Pièces Uniques</div><div class="trust-sub">Édition limitée</div></div>
+  </div>
+</section>
+
+<div class="lace-divider"></div>
+
+<!-- Products -->
+<section class="products-section" id="collection">
+  <div class="section-header">
+    <p class="section-eyebrow">Nos Créations</p>
+    <h2 class="section-title">Nos Colliers</h2>
+    <div class="section-divider">
+      <div class="divider-line"></div>
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="3" fill="#C9A96E"/><circle cx="12" cy="4" r="2" fill="#C9A96E" opacity="0.6"/><circle cx="12" cy="20" r="2" fill="#C9A96E" opacity="0.6"/><circle cx="4" cy="12" r="2" fill="#C9A96E" opacity="0.6"/><circle cx="20" cy="12" r="2" fill="#C9A96E" opacity="0.6"/></svg>
+      <div class="divider-line"></div>
+    </div>
+  </div>
+  <div class="products-grid" id="products-grid">
+    <!-- Products inserted by JS -->
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section moroccan-pattern">
+  <div class="cta-inner">
+    <h2 class="cta-title">Commandez Votre Bijou</h2>
+    <p class="cta-text">Chaque pièce est créée à la demande. Contactez-moi sur WhatsApp ou Instagram pour passer votre commande ou demander une création personnalisée.</p>
+    <div class="cta-buttons">
+      <a href="https://wa.me/212600000000" target="_blank" rel="noopener noreferrer" class="btn-gold">
+        💬 WhatsApp
+      </a>
+      <a href="https://instagram.com/lya_jewellery" target="_blank" rel="noopener noreferrer" class="btn-outline">
+        📸 Instagram
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="lace-divider" style="transform: scaleY(-1);"></div>
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">
+          <img src="lya-logo.jpg" alt="" style="height:40px;width:40px;border-radius:50%;object-fit:cover;" />
+          <span class="footer-brand-name">Lya Jewellery</span>
+        </div>
+        <p class="footer-bio">Chaque bijou est une création unique, façonnée à la main avec soin et passion.</p>
+      </div>
+      <div id="about">
+        <p class="footer-h">À Propos</p>
+        <p class="footer-p">Lya Jewellery crée des colliers artisanaux uniques, façonnés à la main pièce par pièce. Je travaille seule, chaque création est irremplaçable.</p>
+      </div>
+      <div id="contact">
+        <p class="footer-h">Nous Contacter</p>
+        <p class="footer-contact">📍 Livraison partout au Maroc<br>📱 Commandes via WhatsApp<br>✉️ Instagram: @lya_jewellery</p>
+      </div>
+    </div>
+    <div class="footer-bottom">© 2026 Lya Jewellery · Fait à la Main · Tous droits réservés</div>
+  </div>
+</footer>
+
+<!-- Product Modal -->
+<div class="overlay" id="modal" onclick="closeModal(event)">
+  <div class="modal" id="modal-content">
+    <button class="modal-close" onclick="closeModalDirect()">✕</button>
+    <div class="modal-body">
+      <div class="modal-img">
+        <img id="modal-img" src="" alt="" />
+      </div>
+      <div class="modal-info">
+        <p class="modal-eyebrow">Lya Jewellery · Pièce Unique Faite à la Main</p>
+        <span class="badge-artisan" id="modal-material"></span>
+        <h2 class="modal-title" id="modal-title"></h2>
+        <div class="modal-price" id="modal-price"></div>
+        <div class="modal-divider">
+          <div class="modal-divider-line"></div>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="3" fill="#C9A96E"/><circle cx="12" cy="4" r="2" fill="#C9A96E" opacity="0.6"/><circle cx="12" cy="20" r="2" fill="#C9A96E" opacity="0.6"/><circle cx="4" cy="12" r="2" fill="#C9A96E" opacity="0.6"/><circle cx="20" cy="12" r="2" fill="#C9A96E" opacity="0.6"/></svg>
+          <div class="modal-divider-line"></div>
+        </div>
+        <p class="modal-desc" id="modal-desc"></p>
+        <div class="modal-btns">
+          <a id="modal-wa" href="#" target="_blank" class="btn-full btn-gold">💬 Commander sur WhatsApp</a>
+          <a href="https://instagram.com/lya_jewellery" target="_blank" class="btn-full btn-outline-full">📸 Voir sur Instagram</a>
+        </div>
+        <div class="modal-guarantees">
+          <div class="guarantees-grid">
+            <div class="guarantee-item"><span class="guarantee-icon">✦</span> Fait à la main</div>
+            <div class="guarantee-item"><span class="guarantee-icon">⬡</span> Matériaux premium</div>
+            <div class="guarantee-item"><span class="guarantee-icon">✿</span> Livraison Maroc</div>
+            <div class="guarantee-item"><span class="guarantee-icon">❋</span> Pièce unique</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+const products = [
+  { id: 1, name: 'Collier Doré Élégance', image: 'placeholder.png', description: "Un collier raffiné aux lignes épurées, fabriqué à la main en plaqué or 18 carats. Les détails finement ciselés lui confèrent un caractère unique. Pièce irremplaçable — une seule disponible. Parfait pour sublimer une tenue du quotidien ou lors d'une occasion spéciale.", shortDescription: 'Collier artisanal plaqué or 18 carats, finition ciselée à la main.', price: 850, material: 'Plaqué Or 18K' },
+  { id: 2, name: 'Collier Jasmin', image: 'placeholder.png', description: "Un collier délicat en argent sterling 925 orné d'un pendentif fleur ciselé à la main. Le pendentif de 2 cm flotte élégamment sur une chaîne fine de 45 cm. Une ode à la féminité et à la douceur, façonnée entièrement à la main.", shortDescription: 'Collier en argent 925 avec pendentif fleur ciselé à la main.', price: 490, material: 'Argent 925' },
+  { id: 3, name: 'Collier Mosaïque', image: 'placeholder.png', description: "Ce collier unique associe des perles en céramique émaillée de couleurs naturelles, assemblées à la main en un motif harmonieux, mêlé de petites perles dorées. Longueur réglable de 40 à 50 cm. Chaque perle est choisie et placée à la main.", shortDescription: 'Collier perles céramique émaillée, assemblé à la main, pièce unique.', price: 380, material: 'Céramique & Or' },
+  { id: 4, name: 'Collier Grenat Vintage', image: 'placeholder.png', description: "Une création somptueuse multi-rangs associant des perles de grenat naturel à des ornements en argent gravé à la main. Pièce d'exception pour les grandes occasions, entièrement réalisée à la main. Un seul exemplaire disponible.", shortDescription: 'Collier multi-rangs grenat naturel et argent gravé, pièce unique.', price: 1200, material: 'Grenat & Argent' },
+  { id: 5, name: 'Collier Ambre Doré', image: 'placeholder.png', description: "La chaleur de l'ambre naturelle au cœur d'un collier en plaqué or. La pierre d'ambre contraste délicatement avec l'or brillant pour créer une pièce intemporelle et élégante, travaillée entièrement à la main. Une création unique en son genre.", shortDescription: "Collier plaqué or avec pierre d'ambre naturelle, finition artisanale.", price: 650, material: 'Plaqué Or & Ambre' },
+  { id: 6, name: 'Collier Argent Gravé', image: 'placeholder.png', description: "Un collier robuste et élégant forgé en argent massif. Le médaillon circulaire de 3 cm est gravé à la main avec des motifs géométriques minutieux. Travail artisanal exclusif — une seule pièce. Chaîne ajustable de 42 à 48 cm.", shortDescription: 'Collier argent massif, médaillon gravé à la main, pièce unique.', price: 720, material: 'Argent Massif' },
+];
+
+// Render products
+const grid = document.getElementById('products-grid');
+products.forEach(p => {
+  grid.innerHTML += `
+    <a class="product-card" onclick="openModal(${p.id}); return false;" href="#">
+      <div class="card-img-wrap">
+        <img src="${p.image}" alt="${p.name}" loading="lazy" />
+      </div>
+      <div class="card-body">
+        ${p.material ? `<span class="badge-artisan">${p.material}</span>` : ''}
+        <h3 class="card-title">${p.name}</h3>
+        <p class="card-desc">${p.shortDescription}</p>
+        <div class="card-footer">
+          <div class="card-price">${p.price.toLocaleString('fr-MA')} <span>MAD</span></div>
+          <span class="card-cta">Voir →</span>
+        </div>
+      </div>
+    </a>`;
+});
+
+function openModal(id) {
+  const p = products.find(x => x.id === id);
+  if (!p) return;
+  document.getElementById('modal-img').src = p.image;
+  document.getElementById('modal-img').alt = p.name;
+  document.getElementById('modal-material').textContent = p.material || '';
+  document.getElementById('modal-title').textContent = p.name;
+  document.getElementById('modal-price').innerHTML = `${p.price.toLocaleString('fr-MA')} <span>MAD</span>`;
+  document.getElementById('modal-desc').textContent = p.description;
+  document.getElementById('modal-wa').href = `https://wa.me/212600000000?text=Bonjour, je suis intéressée par le ${p.name} à ${p.price} MAD`;
+  document.getElementById('modal').classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeModal(e) {
+  if (e.target === document.getElementById('modal')) closeModalDirect();
+}
+
+function closeModalDirect() {
+  document.getElementById('modal').classList.remove('active');
+  document.body.style.overflow = '';
+}
+
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModalDirect(); });
+
+function toggleMenu() {
+  // Mobile menu placeholder
+}
+</script>
+</body>
+</html>
