@@ -272,7 +272,7 @@
     <img src="lya-logo.jpg" alt="Lya Jewellery" class="hero-logo" />
     <p class="hero-subtitle">Colliers Faits à la Main</p>
     <h1 class="hero-title">L'Art du Bijou<br><em>Artisanal</em></h1>
-    <p class="hero-text">Chaque collier Lya Jewellery est une pièce unique, façonnée à la main avec soin. Je travaille seule — chaque création est irremplaçable.</p>
+    <p class="hero-text">Chaque collier Lya Jewellery est une pièce unique, façonnée à la main avec soin.</p>
     <a href="#collection" class="btn-gold">Découvrir la Collection</a>
   </div>
 </section>
@@ -283,7 +283,6 @@
 <section class="trust-section">
   <div class="trust-grid">
     <div><div class="trust-icon">✦</div><div class="trust-label">Fait à la Main</div><div class="trust-sub">100% artisanal</div></div>
-    <div><div class="trust-icon">⬡</div><div class="trust-label">Matériaux Premium</div><div class="trust-sub">Or, Argent, Pierres</div></div>
     <div><div class="trust-icon">✿</div><div class="trust-label">Livraison Maroc</div><div class="trust-sub">Partout au Maroc</div></div>
     <div><div class="trust-icon">❋</div><div class="trust-label">Pièces Uniques</div><div class="trust-sub">Édition limitée</div></div>
   </div>
@@ -313,7 +312,7 @@
     <h2 class="cta-title">Commandez Votre Bijou</h2>
     <p class="cta-text">Chaque pièce est créée à la demande. Contactez-moi sur WhatsApp ou Instagram pour passer votre commande ou demander une création personnalisée.</p>
     <div class="cta-buttons">
-      <a href="https://wa.me/212600000000" target="_blank" rel="noopener noreferrer" class="btn-gold">
+      <a href="https://wa.me/212663451532" target="_blank" rel="noopener noreferrer" class="btn-gold">
         💬 WhatsApp
       </a>
       <a href="https://instagram.com/lya_jewellery" target="_blank" rel="noopener noreferrer" class="btn-outline">
@@ -386,12 +385,9 @@
 
 <script>
 const products = [
-  { id: 1, name: 'Collier Doré Élégance', image: 'placeholder.png', description: "Un collier raffiné aux lignes épurées, fabriqué à la main en plaqué or 18 carats. Les détails finement ciselés lui confèrent un caractère unique. Pièce irremplaçable — une seule disponible. Parfait pour sublimer une tenue du quotidien ou lors d'une occasion spéciale.", shortDescription: 'Collier artisanal plaqué or 18 carats, finition ciselée à la main.', price: 850, material: 'Plaqué Or 18K' },
-  { id: 2, name: 'Collier Jasmin', image: 'placeholder.png', description: "Un collier délicat en argent sterling 925 orné d'un pendentif fleur ciselé à la main. Le pendentif de 2 cm flotte élégamment sur une chaîne fine de 45 cm. Une ode à la féminité et à la douceur, façonnée entièrement à la main.", shortDescription: 'Collier en argent 925 avec pendentif fleur ciselé à la main.', price: 490, material: 'Argent 925' },
-  { id: 3, name: 'Collier Mosaïque', image: 'placeholder.png', description: "Ce collier unique associe des perles en céramique émaillée de couleurs naturelles, assemblées à la main en un motif harmonieux, mêlé de petites perles dorées. Longueur réglable de 40 à 50 cm. Chaque perle est choisie et placée à la main.", shortDescription: 'Collier perles céramique émaillée, assemblé à la main, pièce unique.', price: 380, material: 'Céramique & Or' },
-  { id: 4, name: 'Collier Grenat Vintage', image: 'placeholder.png', description: "Une création somptueuse multi-rangs associant des perles de grenat naturel à des ornements en argent gravé à la main. Pièce d'exception pour les grandes occasions, entièrement réalisée à la main. Un seul exemplaire disponible.", shortDescription: 'Collier multi-rangs grenat naturel et argent gravé, pièce unique.', price: 1200, material: 'Grenat & Argent' },
-  { id: 5, name: 'Collier Ambre Doré', image: 'placeholder.png', description: "La chaleur de l'ambre naturelle au cœur d'un collier en plaqué or. La pierre d'ambre contraste délicatement avec l'or brillant pour créer une pièce intemporelle et élégante, travaillée entièrement à la main. Une création unique en son genre.", shortDescription: "Collier plaqué or avec pierre d'ambre naturelle, finition artisanale.", price: 650, material: 'Plaqué Or & Ambre' },
-  { id: 6, name: 'Collier Argent Gravé', image: 'placeholder.png', description: "Un collier robuste et élégant forgé en argent massif. Le médaillon circulaire de 3 cm est gravé à la main avec des motifs géométriques minutieux. Travail artisanal exclusif — une seule pièce. Chaîne ajustable de 42 à 48 cm.", shortDescription: 'Collier argent massif, médaillon gravé à la main, pièce unique.', price: 720, material: 'Argent Massif' },
+  { id: 1, name: 'Collier Sun Ray', image: 'orange.jpeg', description: "Un collier raffiné aux lignes épurées, Les détails finement ciselés lui confèrent un caractère unique. une seule disponible. Parfait pour sublimer une tenue du quotidien ou lors d'une occasion spéciale.", price: 300 },
+  { id: 2, name: 'Collier Blue Cristal', image: 'bleu.jpeg', description: "Un collier Spéciale . Une ode à la féminité et à la douceur.",  price: 350 },
+  
 ];
 
 // Render products
@@ -423,7 +419,7 @@ function openModal(id) {
   document.getElementById('modal-title').textContent = p.name;
   document.getElementById('modal-price').innerHTML = `${p.price.toLocaleString('fr-MA')} <span>MAD</span>`;
   document.getElementById('modal-desc').textContent = p.description;
-  document.getElementById('modal-wa').href = `https://wa.me/212600000000?text=Bonjour, je suis intéressée par le ${p.name} à ${p.price} MAD`;
+  document.getElementById('modal-wa').href = `https://wa.me/212663451532?text=Bonjour, je suis intéressée par le ${p.name} à ${p.price} MAD`;
   document.getElementById('modal').classList.add('active');
   document.body.style.overflow = 'hidden';
 }
