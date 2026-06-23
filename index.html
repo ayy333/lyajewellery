@@ -373,7 +373,6 @@
         <div class="modal-guarantees">
           <div class="guarantees-grid">
             <div class="guarantee-item"><span class="guarantee-icon">✦</span> Fait à la main</div>
-            <div class="guarantee-item"><span class="guarantee-icon">⬡</span> Matériaux premium</div>
             <div class="guarantee-item"><span class="guarantee-icon">✿</span> Livraison Maroc</div>
             <div class="guarantee-item"><span class="guarantee-icon">❋</span> Pièce unique</div>
           </div>
@@ -401,7 +400,6 @@ products.forEach(p => {
       <div class="card-body">
         ${p.material ? `<span class="badge-artisan">${p.material}</span>` : ''}
         <h3 class="card-title">${p.name}</h3>
-        <p class="card-desc">${p.shortDescription}</p>
         <div class="card-footer">
           <div class="card-price">${p.price.toLocaleString('fr-MA')} <span>MAD</span></div>
           <span class="card-cta">Voir →</span>
